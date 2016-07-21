@@ -6,22 +6,35 @@ var compScore = 0
 var userScore = 0
 var totalGames = 0
 
+document.write('Welcome! We\'ll play five rounds to determine the winner!' + '</br>' + '</br>')
+
 game()
 
 function game () {
-  document.write('Welcome! We\'ll play five rounds to determine the winner!' + '</br>')
-  userInput = prompt('Do you choose rock, paper or scissors?')
-  if (_verifyUserInput() !== false) {
-    document.write('You: ' + verifiedInput + '</br>')
-    document.write(_compChoice())
-    document.write(_compare(verifiedInput, compPick))
-    totalGames++
-    document.write('Total games played: ' + totalGames + '</br>')
-    document.write('Total score: comp ' + compScore + ' : ' + userScore + ' you' + '</br>' + '</br>')
-    game()
+  if (totalGames < 5) {
+    userInput = prompt('Do you choose rock, paper or scissors?')
+    if (_verifyUserInput() === 'cancel') {
+      document.write('You have cancelled the game! Reload page to try again!')
+    } else if (_verifyUserInput() !== false) {
+      document.write('You: ' + verifiedInput + '</br>')
+      document.write(_compChoice())
+      document.write(_compare(verifiedInput, compPick))
+      totalGames++
+      document.write('Total games played: ' + totalGames + '</br>')
+      document.write('Total score: comp ' + compScore + ' : ' + userScore + ' you' + '</br>' + '</br>')
+      game()
+    } else {
+      alert('Try again. You can only choose rock, paper or scissors.' + '\n' + '(or press \'C\' to Cancel)')
+      game()
+    }
   } else {
-    alert('Try again. You can only choose rock, paper or scissors.')
-    game()
+    if (compScore > userScore) {
+      document.write('Game over! Computer wins! Reload page to try again!' + '</br>')
+    } else if (compScore > userScore) {
+      document.write('Game over! It\'s a tie! Reload page to try again!' + '</br>')
+    } else {
+      document.write('Game over! You win! Reload page to try again!' + '</br>')
+    }
   }
 }
 
