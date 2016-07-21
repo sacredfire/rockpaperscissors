@@ -11,7 +11,7 @@ document.write('Welcome! We\'ll play five rounds to determine the winner!' + '</
 game()
 
 function game () {
-  if (totalGames < 5 && !((compScore - userScore) >= 2) && !((userScore - compScore) >= 2)) {
+  if (totalGames < 5 && !((compScore - userScore) > 2) && !((userScore - compScore) > 2)) {
     userInput = prompt('Do you choose rock, paper or scissors?')
     if (_verifyUserInput() === 'cancel') {
       document.write('You have cancelled the game! Reload page to try again!')
