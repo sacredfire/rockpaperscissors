@@ -50,7 +50,7 @@ function _verifyUserInput () {
     default:
       verifiedInput = false
   }
-  return verifiedInput
+  return 'You: ' + verifiedInput + '</br>'
 }
 
 function _compChoice () {
