@@ -30,7 +30,7 @@ function game () {
   } else {
     if (compScore > userScore) {
       document.write('Game over! Computer wins! Reload page to try again!' + '</br>')
-    } else if (compScore > userScore) {
+    } else if (compScore === userScore) {
       document.write('Game over! It\'s a tie! Reload page to try again!' + '</br>')
     } else {
       document.write('Game over! You win! Reload page to try again!' + '</br>')
