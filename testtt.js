@@ -9,18 +9,18 @@ var totalGames = 0
 game()
 
 function game () {
-  userInput = prompt('Do you choose rock, paper or scissors?')
+  userInput = '' // prompt('Do you choose rock, paper or scissors?')
   if (verifiedInput) {
-    document.write(_verifyUserInput())
-    document.write(_compChoice())
-    document.write(_compare(verifiedInput, compPick))
+    console.log(_verifyUserInput())
+    console.log(_compChoice())
+    console.log(_compare(verifiedInput, compPick))
     totalGames++
-    document.write('Total games played: ' + totalGames + '</br>')
-    document.write('Total score: comp ' + compScore + ' : ' + userScore + ' you' + '</br>' + '</br>')
-    game()
+    console.log('Total games played: ' + totalGames + '</br>')
+    console.log('Total score: comp ' + compScore + ' : ' + userScore + ' you' + '</br>' + '</br>')
+    // game()
   } else {
-    alert('Try again. You can only choose rock, paper or scissors.')
-    game()
+    console.log('Try again. You can only choose rock, paper or scissors.')
+    // game()
   }
 }
 
@@ -45,13 +45,17 @@ function _verifyUserInput () {
       verifiedInput = 'scissors'
       break
     case '':
-      verifiedInput = 0
+      verifiedInput = false
       break
     default:
-      verifiedInput = 0
+      verifiedInput = false
   }
+  // console.log('You: ' + verifiedInput + '</br>')
   return 'You: ' + verifiedInput + '</br>'
 }
+
+// console.log('\n')
+// console.log(_verifyUserInput(''))
 
 function _compChoice () {
   if (Math.random() < 0.34) {
