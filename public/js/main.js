@@ -5,20 +5,23 @@ var compPick
 var compScore = 0
 var userScore = 0
 var totalGames = 0
+var gamesLeft = 5 - totalGames
 
 document.write('Welcome! We\'ll play up to five rounds to determine the winner!' + '</br>' + '</br>')
 
 game()
 
 function game () {
-  if (totalGames < 5 && !((compScore - userScore) > 2) && !((userScore - compScore) > 2)) {
-    _gamePlay()
+  if (gamesLeft < 2 && !((compScore - userScore) >= 2) && !((userScore - compScore) >= 2)) {
+    gamePlay()
+  } else if (totalGames < 5 && !((compScore - userScore) > 2) && !((userScore - compScore) > 2)) {
+    gamePlay()
   } else {
-    _gameOver()
+    gameOver()
   }
 }
 
-function _gamePlay () {
+function gamePlay () {
   userInput = prompt('Do you choose rock, paper or scissors?')
   if (_verifyUserInput() === 'cancel') {
     document.write('You have cancelled the game! Reload page to try again!')
@@ -36,7 +39,7 @@ function _gamePlay () {
   }
 }
 
-function _gameOver () {
+function gameOver () {
   if (compScore > userScore) {
     document.write('Game over! Computer wins! Reload page to try again!' + '</br>')
   } else if (compScore === userScore) {
