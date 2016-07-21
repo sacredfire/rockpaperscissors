@@ -9,6 +9,7 @@ var totalGames = 0
 game()
 
 function game () {
+  document.write('Welcome! We\'ll play five rounds to determine the winner!' + '</br>')
   userInput = prompt('Do you choose rock, paper or scissors?')
   if (_verifyUserInput() !== false) {
     document.write('You: ' + verifiedInput + '</br>')
@@ -26,6 +27,12 @@ function game () {
 
 function _verifyUserInput () {
   switch (userInput) {
+    case 'cancel':
+      verifiedInput = 'cancel'
+      break
+    case 'c':
+      verifiedInput = 'cancel'
+      break
     case 'paper':
       verifiedInput = 'paper'
       break
