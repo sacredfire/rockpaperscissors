@@ -45,10 +45,10 @@ function _verifyUserInput () {
       verifiedInput = 'scissors'
       break
     case '':
-      verifiedInput = '0'
+      verifiedInput = 0
       break
     default:
-      verifiedInput = '0'
+      verifiedInput = 0
   }
   return 'You: ' + verifiedInput + '</br>'
 }
