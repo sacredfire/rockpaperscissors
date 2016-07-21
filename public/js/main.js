@@ -13,8 +13,7 @@ game()
 function game () {
   if ((totalGames > 3 && ((compScore - userScore) > 1)) || (totalGames > 3 && ((userScore - compScore) > 1))) {
     gameOver()
-  }
-  if (totalGames < 5 && !((compScore - userScore) > 2) && !((userScore - compScore) > 2)) {
+  } else if (totalGames < 5 && !((compScore - userScore) > 2) && !((userScore - compScore) > 2)) {
     gamePlay()
   } else {
     gameOver()
