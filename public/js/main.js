@@ -5,16 +5,13 @@ var compPick
 var compScore = 0
 var userScore = 0
 var totalGames = 0
-var gamesLeft = 5 - totalGames
 
 document.write('Welcome! We\'ll play up to five rounds to determine the winner!' + '</br>' + '</br>')
 
 game()
 
 function game () {
-  if (gamesLeft < 2 && !((compScore - userScore) >= 2) && !((userScore - compScore) >= 2)) {
-    gamePlay()
-  } else if (gamesLeft >= 5 && !((compScore - userScore) > 2) && !((userScore - compScore) > 2)) {
+  if (totalGames < 5 && !((compScore - userScore) > 2) && !((userScore - compScore) > 2)) {
     gamePlay()
   } else {
     gameOver()
