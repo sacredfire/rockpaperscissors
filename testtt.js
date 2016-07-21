@@ -10,7 +10,7 @@ game()
 
 function game () {
   userInput = '' // prompt('Do you choose rock, paper or scissors?')
-  if (verifiedInput) {
+  if (_verifyUserInput() !== false) {
     console.log(_verifyUserInput())
     console.log(_compChoice())
     console.log(_compare(verifiedInput, compPick))
@@ -50,8 +50,8 @@ function _verifyUserInput () {
     default:
       verifiedInput = false
   }
-  // console.log('You: ' + verifiedInput + '</br>')
-  return 'You: ' + verifiedInput + '</br>'
+  console.log('You: ' + verifiedInput + '</br>')
+  return verifiedInput
 }
 
 // console.log('\n')

@@ -10,7 +10,7 @@ game()
 
 function game () {
   userInput = prompt('Do you choose rock, paper or scissors?')
-  if (verifiedInput) {
+  if (_verifyUserInput() !== false) {
     document.write(_verifyUserInput())
     document.write(_compChoice())
     document.write(_compare(verifiedInput, compPick))
@@ -45,12 +45,12 @@ function _verifyUserInput () {
       verifiedInput = 'scissors'
       break
     case '':
-      verifiedInput = 0
+      verifiedInput = false
       break
     default:
-      verifiedInput = 0
+      verifiedInput = false
   }
-  return 'You: ' + verifiedInput + '</br>'
+  return verifiedInput
 }
 
 function _compChoice () {
