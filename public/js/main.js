@@ -6,7 +6,7 @@ var compScore = 0
 var userScore = 0
 var totalGames = 0
 
-document.write('Welcome! We\'ll play up to five rounds to determine the winner!' + '</br>' + '</br>')
+document.write('Welcome! We\'ll play up to FIVE rounds to determine the winner!' + '</br>' + '</br>')
 
 game()
 
